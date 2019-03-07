@@ -19,7 +19,7 @@ class cinder(object):
         r = s.get('https://'+host_name+':8000/'+log_name)
         return r.text
 
-log = ['cind_backup','cind_api','cind_scheduler','cind_volume']
+log = ['cind_backup','cind_api','cind_scheduler','cind_volume','glan_api','glan_registry','keystone','nova_api','nova_manage','nova_novncproxy','nova_api-os-compute','nova_placement-api','nova_xvpvncproxy','nova_consoleauth','nova_console','nova_scheduler','nova_conductor','neu_dhcp','neu_metering','neu_server','neu_l3','neu_openvswitch','neu_metadata','neu_ovs-cleanup']
 
 for w in log:
 	cherrypy.tree.mount(cinder(), '/'+w,
