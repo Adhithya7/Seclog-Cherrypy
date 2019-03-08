@@ -3,7 +3,7 @@ import random
 import string
 
 cherrypy.config.update({
-    'server.socket_host':'192.168.1.23',
+    'server.socket_host':'192.168.1.23',#Edit Ip address
     'server.socket_port':8000,
     'server.ssl_module':'builtin',
     'server.ssl_certificate':'/home/osm/VNFServer.pem',
@@ -15,7 +15,7 @@ cherrypy.config.update({
 class cind_backup(object):
     def GET(self):
         listex = []
-        f = open('/var/log/cinder/backup.log','r')
+        f = open('/seclog/log/cinder/backup.log','r')
         for line in f:
             listex.append(line)
         return listex
@@ -24,7 +24,7 @@ class cind_backup(object):
 class cind_api(object):
     def GET(self):
         listex = []
-        f = open('/var/log/cinder/api.log','r')
+        f = open('/seclog/log/cinder/api.log','r')
         for line in f:
             listex.append(line)
         return listex
@@ -33,7 +33,7 @@ class cind_api(object):
 class cind_scheduler(object):
     def GET(self):
         listex = []
-        f = open('/var/log/cinder/scheduler.log','r')
+        f = open('/seclog/log/cinder/scheduler.log','r')
         for line in f:
             listex.append(line)
         return listex
@@ -42,7 +42,7 @@ class cind_scheduler(object):
 class cind_volume(object):
     def GET(self):
         listex = []
-        f = open('/var/log/cinder/volume.log','r')
+        f = open('/seclog/log/cinder/volume.log','r')
         for line in f:
             listex.append(line)
         return listex
