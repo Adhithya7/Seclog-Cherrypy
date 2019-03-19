@@ -6,9 +6,9 @@ cherrypy.config.update({
     'server.socket_host':'192.168.1.23',#Edit Ip address
     'server.socket_port':8000,
     'server.ssl_module':'builtin',
-    'server.ssl_certificate':'/home/osm/VNFServer.pem',
-    'server.ssl_private_key':'/home/osm/VNFServer.key',
-    'server.ssl_certificate_chain':'/home/osm/logcertchain.pem'
+    'server.ssl_certificate':'/seclog/keys/VNFServer.pem',
+    'server.ssl_private_key':'/seclog/keys/VNFServer.key',
+    'server.ssl_certificate_chain':'/seclog/keys/logcertchain.pem'
     })
 
 @cherrypy.expose
