@@ -10,7 +10,7 @@ cherrypy.config.update({
 
 @cherrypy.expose
 class cinder(object):
-    def GET(self,host_name,log_name):
+    def GET(self,host_name,log_namein):
         s=requests.Session()
         log_name=log_namein
         r = s.get('http://'+host_name+':8000/'+log_name)
