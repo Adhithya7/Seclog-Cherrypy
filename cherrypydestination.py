@@ -43,10 +43,11 @@ class cind_volume(object):
             listex.append(line)
         return listex
 
-log = ['cind_backup','cind_api','cind_scheduler','cind_volume','glan_api','glan_registry','keystone','nova_api','nova_manage','nova_novncproxy','nova_api-os-compute','nova_placement-api','nova_xvpvncproxy','nova_consoleauth','nova_console','nova_scheduler','nova_conductor','neu_dhcp','neu_metering','neu_server','neu_l3','neu_openvswitch','neu_metadata','neu_ovs-cleanup']
+log = ['cind_backup','cind_api','cind_scheduler','cind_volume']
+#'glan_api','glan_registry','keystone','nova_api','nova_manage','nova_novncproxy','nova_api-os-compute','nova_placement-api','nova_xvpvncproxy','nova_consoleauth','nova_console','nova_scheduler','nova_conductor','neu_dhcp','neu_metering','neu_server','neu_l3','neu_openvswitch','neu_metadata','neu_ovs-cleanup'
 
 for w in log:
-	cherrypy.tree.mount(cinder(), '/'+w,
+	cherrypy.tree.mount(w(),
 	    {'/':
 	         {'request.dispatch': cherrypy.dispatch.MethodDispatcher()}
 	    }
